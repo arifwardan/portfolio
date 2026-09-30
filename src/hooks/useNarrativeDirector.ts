@@ -3,12 +3,11 @@
 import { useEffect, useRef, type RefObject } from "react";
 import { TIMING } from "@/lib/narrative";
 import { blip, unlockAudio } from "@/lib/sound";
-import { isWebGLAvailable } from "@/lib/webgl";
 import { usePortfolioStore } from "@/stores/usePortfolioStore";
 import { usePrefersReducedMotion } from "./usePrefersReducedMotion";
 
 /**
- * Narrative director: owns environment detection, the incident trigger,
+ * Narrative director: owns reduced-motion sync, the incident trigger,
  * glitch progression, takeover scroll-locking and the post-boot handoff.
  * Mounted once in the page shell.
  */
@@ -16,22 +15,13 @@ export function useNarrativeDirector(sentinelRef: RefObject<HTMLElement | null>)
   const reducedMotion = usePrefersReducedMotion();
   const firedRef = useRef(false);
 
-  // Environment detection (webgl / viewport / motion).
+  // Audio unlock on first interaction (sound effects stay silent until then).
   useEffect(() => {
-    const set = usePortfolioStore.getState();
-    set.setWebgl(isWebGLAvailable() ? "ok" : "unavailable");
-    const query = window.matchMedia("(max-width: 1023px)");
-    set.setSmallScreen(query.matches);
-    const onViewport = (event: MediaQueryListEvent): void => {
-      usePortfolioStore.getState().setSmallScreen(event.matches);
-    };
-    query.addEventListener("change", onViewport);
     const unlock = (): void => {
       unlockAudio();
     };
     window.addEventListener("pointerdown", unlock, { once: true });
     return () => {
-      query.removeEventListener("change", onViewport);
       window.removeEventListener("pointerdown", unlock);
     };
   }, []);

@@ -2,22 +2,11 @@
 
 import type { JSX } from "react";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import laptopCode from "@assets/images/laptop-code.jpg";
 import { PROFILE } from "@/lib/content";
 import { usePortfolioStore } from "@/stores/usePortfolioStore";
-import {
-  CanvasSkeleton,
-  SceneErrorBoundary,
-  SceneFallback,
-} from "@/components/three/SceneFallback";
-
-const PortfolioScene = dynamic(
-  () => import("@/components/three/PortfolioScene").then((module) => module.PortfolioScene),
-  { ssr: false, loading: () => <CanvasSkeleton /> },
-);
 
 function scrollToId(id: string): void {
   document.getElementById(id)?.scrollIntoView({
@@ -26,16 +15,11 @@ function scrollToId(id: string): void {
 }
 
 /**
- * World 01 arrival: editorial hero beside the interactive studio.
- * Small screens and missing WebGL get a static poster instead of the canvas.
+ * World 01 arrival: editorial hero beside a static visual.
+ * Deliberately canvas-free — no WebGL, no 3D runtime, fast on every device.
  */
 export function Hero(): JSX.Element {
-  const webgl = usePortfolioStore((state) => state.webgl);
-  const smallScreen = usePortfolioStore((state) => state.smallScreen);
   const reducedMotion = usePortfolioStore((state) => state.reducedMotion);
-
-  const showCanvas = !smallScreen && webgl === "ok";
-  const showPoster = smallScreen || webgl === "unavailable";
 
   return (
     <section id="top" className="bg-paper text-ink">
@@ -88,31 +72,19 @@ export function Hero(): JSX.Element {
 
         <div>
           <div className="relative h-[440px] border border-ink/15 lg:h-[620px]">
-            {showPoster ? (
-              <figure className="relative h-full w-full">
-                <Image
-                  src={laptopCode}
-                  alt="Code on a laptop screen"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 55vw"
-                  className="object-cover"
-                  priority
-                />
-              </figure>
-            ) : showCanvas ? (
-              <SceneErrorBoundary>
-                <PortfolioScene />
-              </SceneErrorBoundary>
-            ) : webgl === "unknown" ? (
-              <CanvasSkeleton />
-            ) : (
-              <SceneFallback />
-            )}
+            <figure className="relative h-full w-full">
+              <Image
+                src={laptopCode}
+                alt="Code on a laptop screen"
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
+                priority
+              />
+            </figure>
           </div>
           <p className="mt-3 font-mono text-xs text-ink/45">
-            {showCanvas
-              ? "Drag to orbit — scroll to zoom — click a marker to travel."
-              : "Static preview — open on desktop with WebGL for the full studio."}
+            Field notes from the systems I build and break.
           </p>
         </div>
       </div>

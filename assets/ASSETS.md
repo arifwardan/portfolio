@@ -1,7 +1,7 @@
-# Asset Manifest — Arif Wardan 3D Interactive Portfolio
+# Asset Manifest — Arif Wardan Interactive Portfolio
 
 Pemetaan setiap file di `assets/` ke kebutuhan PRD, sumber, dan lisensi.
-Struktur folder yang sudah ada (`3D_object/`, `images/`, `logo/`, `videos/`) dipertahankan.
+Struktur folder yang sudah ada (`images/`, `logo/`, `videos/`) dipertahankan.
 
 > Catatan: file bertanda PLACEHOLDER harus diganti dengan materi asli
 > (foto diri, screenshot project sungguhan) sebelum rilis publik.
@@ -10,12 +10,13 @@ Struktur folder yang sudah ada (`3D_object/`, `images/`, `logo/`, `videos/`) dip
 
 ```
 assets/
-├── 3D_object/
-│   └── meshy-model.glb            # milik user (sudah ada, 24 MB)
 ├── images/                        # 13 JPG + 2 SVG
 ├── logo/                          # 23 SVG + 15 SVG (white/)
 └── videos/                        # 3 MP4 + 2 poster JPG
 ```
+
+> Catatan: folder `3D_object/meshy-model.glb` (±24 MB) dihapus dari branch
+> ringan ini — hero memakai poster statis, tanpa runtime 3D/WebGL.
 
 ## images/ — foto & grafik
 
