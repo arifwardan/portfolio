@@ -1,0 +1,19 @@
+import { globalIgnores } from "eslint/config";
+import { FlatCompat } from "@eslint/eslintrc";
+
+const compat = new FlatCompat({
+  baseDirectory: import.meta.dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  // Plain <img> is intentional for SVG icons (no raster optimization benefit).
+  {
+    rules: {
+      "@next/next/no-img-element": "off",
+    },
+  },
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+];
+
+export default eslintConfig;
