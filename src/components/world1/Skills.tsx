@@ -24,8 +24,11 @@ export function Skills(): JSX.Element {
   return (
     <Section id="skills" index="03" title="Skills">
       <p className="max-w-2xl leading-relaxed text-ink/70">
-        A technology ecosystem, not a progress bar. These are the tools the systems below were built
-        with.
+        In the AI era, no single language is a barrier — with clear context and intent, any
+        syntax can be produced. What remains irreplaceable is the engineer&apos;s judgment:
+        the knowledge and experience to plan a system, design it soundly, and see it through
+        to production. That is the core of the craft; below are the tools it has been
+        practiced with.
       </p>
       <div className="mt-10">
         {SKILL_GROUPS.map((group) => (

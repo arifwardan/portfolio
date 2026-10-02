@@ -2,7 +2,7 @@
   "name": "arif-wardan-portfolio",
   "version": "0.1.0",
   "private": true,
-  "description": "Arif Wardan — 3D interactive portfolio (World 01 → system incident → hacker mode).",
+  "description": "Arif Wardan — interactive portfolio (World 01 → system incident → hacker mode).",
   "engines": {
     "node": ">=20.18.0"
   },
@@ -20,8 +20,6 @@
     "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
-    "@react-three/drei": "^10.0.0",
-    "@react-three/fiber": "^9.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.0.0",
     "lucide-react": "^0.460.0",
@@ -29,7 +27,6 @@
     "react": ">=19.0.0 <19.3.0",
     "react-dom": ">=19.0.0 <19.3.0",
     "tailwind-merge": "^2.5.4",
-    "three": "^0.180.0",
     "zustand": "^5.0.0"
   },
   "devDependencies": {
@@ -38,7 +35,6 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/three": "^0.180.0",
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.0.0",
     "postcss": "^8.4.49",

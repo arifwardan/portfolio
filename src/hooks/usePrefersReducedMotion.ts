@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 const QUERY = "(prefers-reduced-motion: reduce)";
 
 export function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState<boolean>(() =>
-    typeof window !== "undefined" && "matchMedia" in window
-      ? window.matchMedia(QUERY).matches
-      : false,
-  );
+  // SSR-safe: the first client render must match the server render, so the
+  // initial state is a static default. The live preference is synced in the
+  // effect below (after hydration), then kept current via the change listener.
+  const [reduced, setReduced] = useState<boolean>(false);
 
   useEffect(() => {
     const query = window.matchMedia(QUERY);
+    setReduced(query.matches);
     const onChange = (event: MediaQueryListEvent): void => {
       setReduced(event.matches);
     };

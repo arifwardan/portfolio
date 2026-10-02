@@ -14,7 +14,7 @@ export interface Profile {
 export const PROFILE: Profile = {
   name: "Arif Wardan",
   role: "Software Engineer",
-  tagline: "Building software, systems and ideas.",
+  tagline: "Building software, systems, and things worth solving.",
   location: "Indonesia",
   stackLine: "Golang • FastAPI • Next.js",
   quote: "The best way to predict the future is to build it.",
@@ -29,14 +29,23 @@ export interface Experience {
 
 export const EXPERIENCES: readonly Experience[] = [
   {
-    period: "2023 — Present",
-    role: "Backend / Software Engineering",
-    organization: "Independent",
+    period: "2024 — Present",
+    role: "Mentor",
+    organization: "Pondok Programmer",
     bullets: [
-      "Built backend systems serving production traffic",
-      "Designed versioned REST APIs with JWT auth",
-      "Shipped multi-tenant application workflows",
-      "Orchestrated LLM APIs into AI-native features",
+      "Mentored aspiring developers in backend engineering fundamentals",
+      "Delivered technical public speaking sessions and workshops",
+      "Guided students through practical software development projects",
+    ],
+  },
+  {
+    period: "2024 — Present",
+    role: "Self Employed",
+    organization: "Exnusa",
+    bullets: [
+      "Architected and built an AI-native software product from scratch",
+      "Orchestrated Large Language Models (LLMs) into core backend features",
+      "Managed end-to-end product lifecycle and technical roadmap",
     ],
   },
   {
@@ -44,19 +53,37 @@ export const EXPERIENCES: readonly Experience[] = [
     role: "Software Engineer",
     organization: "PT Nizom Berkah Informasi",
     bullets: [
-      "Developed backend services in Golang",
-      "Designed APIs consumed by web and mobile clients",
-      "Hardened multi-tenant data isolation",
+      "Developed backend services primarily using Golang",
+      "Designed and optimized complex database queries and schemas",
+      "Improved overall system performance through targeted optimizations",
     ],
   },
   {
-    period: "2022 — 2023",
-    role: "Software Engineer",
-    organization: "PT Integral Data Prima",
+    period: "2023",
+    role: "Back End Developer",
+    organization: "PT Semesta Arus Teknologi",
     bullets: [
-      "Built backend systems for enterprise clients",
-      "Worked across complex application workflows",
-      "Shipped features with PostgreSQL and Redis",
+      "Built backend features for enterprise applications",
+      "Optimized database performance and system queries",
+    ],
+  },
+  {
+    period: "2021 — 2023",
+    role: "Back End Developer",
+    organization: "Ortax",
+    bullets: [
+      "Designed and developed RESTful APIs using Object-Oriented Programming",
+      "Built scalable backend systems for taxation platforms",
+      "Collaborated on multi-tenant application workflows",
+    ],
+  },
+  {
+    period: "2020 — 2021",
+    role: "Mentor",
+    organization: "Pondok Programmer",
+    bullets: [
+      "Guided students through foundational programming concepts",
+      "Facilitated technical mentoring and public speaking activities",
     ],
   },
 ];
@@ -72,9 +99,9 @@ export interface SkillGroup {
  * that story is told by the incident experience instead.
  */
 export const SKILL_GROUPS: readonly SkillGroup[] = [
-  { label: "Backend", items: ["Golang", "FastAPI", "REST API", "JWT"] },
-  { label: "Frontend", items: ["Next.js", "React", "TypeScript"] },
-  { label: "Database", items: ["PostgreSQL", "Redis"] },
+  { label: "Backend", items: ["Golang", "FastAPI", "Laravel", "REST API", "JWT"] },
+  { label: "Frontend", items: ["Next.js", "React", "Svelte", "TypeScript"] },
+  { label: "Database", items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
   { label: "Tools", items: ["Docker", "Git", "Linux"] },
   { label: "AI", items: ["LLM APIs", "AI Agents", "AI-native Systems"] },
 ];
@@ -98,32 +125,37 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: "althea",
     name: "ALTHEA",
-    tagline: "AI-native software company operating system.",
+    tagline: "Autonomous agent runtime — does the work while you sleep.",
     description:
-      "An operating system for software companies: projects, knowledge and " +
-      "AI agents orchestrated behind one API. Event-driven core, multi-tenant " +
-      "by design, with an agent layer that drafts, reviews and ships routine work.",
+      "A laptop-first autonomous runtime: a Node.js + TypeScript backend with a Svelte 5 " +
+      "dashboard that orchestrates the Muse CLI subscription as its brain. Dynamic LIFO task " +
+      "workflows, sleep-that-wakes, resume across usage-limit resets, and a web → Telegram → " +
+      "auto-decide permission escalation with a kill-switch. Project work runs an autonomous " +
+      "pipeline — PRD to MVP to release — with code review, MCP tool verification, and live " +
+      "per-port app previews.",
     role: "Founder / Engineer",
-    stack: ["FastAPI", "Golang", "Next.js", "PostgreSQL", "Redis"],
+    stack: ["Node.js", "TypeScript", "Svelte 5", "Telegram API", "LangGraph", "Playwright"],
     status: "Building",
-    year: "2025",
+    year: "2026",
     cover: "althea",
-    links: [{ label: "Case file", href: "#projects-althea" }],
+    links: [{ label: "GitHub", href: "https://github.com/arifwardan/althea" }],
   },
   {
     slug: "simahal",
     name: "SiMahal",
-    tagline: "Price intelligence, engineered end-to-end.",
+    tagline: "Qur'an halaqah management — one ecosystem for the whole journey.",
     description:
-      "A multi-tenant application tracking prices across vendors: ingestion " +
-      "pipelines, a versioned public API and a client app. Built for correctness " +
-      "first — every figure traceable to its source snapshot.",
+      "A Qur'an memorization management system built for PondokIT, connecting Admin, " +
+      "Muhafidz, Santri, and parents in one ecosystem: mutabaah records, hafalan targets, " +
+      "evaluations, and progress computed from real records — never stored as a guess — with " +
+      "parent notifications on every milestone. Laravel core with Eloquent on PostgreSQL, " +
+      "React + Inertia + TypeScript frontend in a calm Modern Islamic Futurism language.",
     role: "Engineer",
-    stack: ["Golang", "PostgreSQL", "Redis", "Next.js"],
-    status: "Shipped",
-    year: "2024",
+    stack: ["Laravel", "React", "Inertia", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    status: "Building",
+    year: "2026",
     cover: "simahal",
-    links: [{ label: "Case file", href: "#projects-simahal" }],
+    links: [{ label: "GitHub", href: "https://github.com/arifwardan/simahal" }],
   },
 ];
 
@@ -195,5 +227,5 @@ export const SOCIALS: readonly Social[] = [
     href: "https://www.linkedin.com/in/arifwardan",
     logo: "linkedin",
   },
-  { label: "Email", href: "mailto:hello@arifwardan.dev", logo: "gmail" },
+  { label: "Email", href: "mailto:arifwardan.id@gmail.com", logo: "gmail" },
 ];

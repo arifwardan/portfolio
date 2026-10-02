@@ -63,6 +63,8 @@ export function HackerProjects(): JSX.Element {
                   <a
                     key={link.label}
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                     className="border border-term/60 px-5 py-2.5 font-mono text-sm text-term transition-colors hover:bg-term hover:text-void"
                   >
                     {link.label} →

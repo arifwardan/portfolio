@@ -58,7 +58,7 @@ export function Contact(): JSX.Element {
 
       <footer className="mt-20 flex flex-col gap-3 border-t border-white/10 pt-8 font-mono text-xs text-neutral-600 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 {PROFILE.name} — World 01 / World 02</p>
-        <p>Built with Next.js, Three.js, and intent.</p>
+        <p>Built with Next.js and intent.</p>
       </footer>
     </Section>
   );
