@@ -55,7 +55,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }): JSX.Element {
   return (
     <html lang="en" className={`${display.variable} ${mono.variable}`}>
-      <body className="bg-paper font-display text-ink antialiased">{children}</body>
+      <body className="bg-paper font-display text-ink antialiased" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }

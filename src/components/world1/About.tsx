@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import Image from "next/image";
-import avatarPlaceholder from "@assets/images/avatar-placeholder.svg";
+import profilePortrait from "@assets/images/profile.png";
 import { COVERS } from "@/lib/covers";
 import { PROFILE } from "@/lib/content";
 import { Section } from "@/components/ui/Section";
@@ -10,10 +10,9 @@ export function About(): JSX.Element {
     <Section id="about" index="01" title="About">
       <div className="grid gap-12 lg:grid-cols-[280px_1fr] lg:gap-16">
         <div>
-          {/* PLACEHOLDER: swap with a real portrait before launch. */}
           <img
-            src={avatarPlaceholder.src}
-            alt="Portrait placeholder for Arif Wardan"
+            src={profilePortrait.src}
+            alt="Portrait of Arif Wardan"
             width={280}
             height={280}
             className="aspect-square w-full max-w-[280px] border border-ink/15"
@@ -36,19 +35,52 @@ export function About(): JSX.Element {
 
         <div>
           <p className="font-display text-2xl leading-snug font-medium lg:text-3xl">
-            Engineer, builder, explorer — I work on the parts of software nobody sees until they
-            break.
+            I&apos;m <strong>Arif Wardan</strong>, a Backend Developer who believes that great
+            software is not built by writing more code — it is built by{" "}
+            <strong>understanding the problem, designing the right system, and taking ownership
+            of the result.</strong>
           </p>
           <div className="mt-8 max-w-2xl space-y-5 leading-relaxed text-ink/75">
             <p>
-              I&apos;m Arif, a software engineer based in {PROFILE.location}. Most of my time goes
-              into backends: APIs, data models and the unglamorous plumbing that decides whether
-              software survives contact with production.
+              My journey started at <strong className="font-semibold text-ink">Pondok IT</strong>,
+              where I spent years learning not only how to code, but how to think like an
+              engineer. Since then, I&apos;ve worked on real-world systems involving{" "}
+              <strong className="font-semibold text-ink">multi-tenant applications, taxation
+              platforms, internal business tools, and advertising platforms</strong>, primarily
+              using <strong className="font-semibold text-ink">Golang and backend
+              technologies</strong>.
+            </p>
+            <p>What makes me different is the way I approach engineering.</p>
+            <p>
+              I don&apos;t want to be the developer who simply waits for a ticket and turns
+              requirements into code.
+            </p>
+            <p>I like asking:</p>
+          </div>
+          <blockquote className="mt-6 max-w-2xl border-l-2 border-ink pl-6 font-display text-xl leading-relaxed font-medium">
+            <p>Why are we building this?</p>
+            <p>What happens when it grows?</p>
+            <p>What will break?</p>
+            <p>How can we make the next change easier?</p>
+          </blockquote>
+          <div className="mt-6 max-w-2xl space-y-5 leading-relaxed text-ink/75">
+            <p>
+              That mindset naturally led me beyond implementation — into{" "}
+              <strong className="font-semibold text-ink">architecture, developer experience,
+              automation, system design, and product thinking</strong>.
             </p>
             <p>
-              My stack centers on {PROFILE.stackLine}, with PostgreSQL and Redis underneath. Lately
-              most of my building has been AI-native — LLM APIs and agents wired into systems that
-              do real work, like ALTHEA.
+              I&apos;m currently exploring how AI can become part of the engineering process
+              without sacrificing the standards, structure, and reasoning that make software
+              maintainable.
+            </p>
+            <p>
+              Because for me, AI isn&apos;t the destination.{" "}
+              <strong className="font-semibold text-ink">Building better software is.</strong>
+            </p>
+            <p>
+              I enjoy difficult problems, unfamiliar technologies, Linux, and projects where I can
+              turn an unclear idea into something real.
             </p>
           </div>
           <blockquote className="mt-10 border-ink/80 pl-0">

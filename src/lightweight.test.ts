@@ -47,4 +47,11 @@ describe("lightweight (no 3D runtime)", () => {
   it("ships no GLB binary in assets", () => {
     expect(existsSync(join(root, "assets", "3D_object", "meshy-model.glb"))).toBe(false);
   });
+
+  it("hero poster import resolves to an existing asset file", () => {
+    const hero = readFileSync(join(root, "src", "components", "world1", "Hero.tsx"), "utf8");
+    const asset = hero.match(/from ["']@assets\/images\/([^"']+)["']/)?.[1];
+    expect(asset).toBeDefined();
+    expect(existsSync(join(root, "assets", "images", asset ?? ""))).toBe(true);
+  });
 });
