@@ -143,17 +143,19 @@ export const PROJECTS: readonly Project[] = [
   {
     slug: "simahal",
     name: "SiMahal",
-    tagline: "Price intelligence, engineered end-to-end.",
+    tagline: "Qur'an halaqah management — one ecosystem for the whole journey.",
     description:
-      "A multi-tenant application tracking prices across vendors: ingestion " +
-      "pipelines, a versioned public API and a client app. Built for correctness " +
-      "first — every figure traceable to its source snapshot.",
+      "A Qur'an memorization management system built for PondokIT, connecting Admin, " +
+      "Muhafidz, Santri, and parents in one ecosystem: mutabaah records, hafalan targets, " +
+      "evaluations, and progress computed from real records — never stored as a guess — with " +
+      "parent notifications on every milestone. Laravel core with Eloquent on PostgreSQL, " +
+      "React + Inertia + TypeScript frontend in a calm Modern Islamic Futurism language.",
     role: "Engineer",
-    stack: ["Golang", "PostgreSQL", "Redis", "Next.js"],
-    status: "Shipped",
-    year: "2024",
+    stack: ["Laravel", "React", "Inertia", "TypeScript", "PostgreSQL", "Tailwind CSS"],
+    status: "Building",
+    year: "2026",
     cover: "simahal",
-    links: [{ label: "Case file", href: "#projects-simahal" }],
+    links: [{ label: "GitHub", href: "https://github.com/arifwardan/simahal" }],
   },
 ];
 
